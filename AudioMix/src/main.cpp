@@ -4,7 +4,7 @@
 
 int main()
 {
-	
+	/*
 	AudioMix::ServerConfig serverConfig;
 	auto logger = std::make_shared<AudioMix::ConsoleLogger>();
 	auto normalizer = std::make_shared<AudioMix::Normalizer>(0, 100);
@@ -13,5 +13,8 @@ int main()
 	auto mixer = std::make_shared<AudioMix::Mixer>(logger, std::move(sliderMapper));
 	server->AddObserver(mixer);
 	server->StartListen();
-	
+	*/
+	auto logger = std::make_shared<AudioMix::ConsoleLogger>();
+	logger->LogInforamtion("Test info", std::string(NAMEOF(AudioMix::MockServer)));
+	logger->LogError("Test error", std::string(NAMEOF(AudioMix::SliderMapper)));
 }

@@ -4,7 +4,7 @@ namespace AudioMix
 {
 	void Mixer::MessageReceive(ServerMessage& serverMessage)
 	{
-		_logger->LogInforamtion("Get server message.");
+		_logger->LogInforamtion("Get server message.", std::string(NAMEOF(Mixer::MessageReceive)));
 		_sliderMapper->SetVolume(serverMessage.sliderNumber, serverMessage.value);
 	}
 

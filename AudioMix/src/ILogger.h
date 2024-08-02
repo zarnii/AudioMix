@@ -14,12 +14,14 @@ namespace AudioMix
 		/// Логирование информации.
 		/// </summary>
 		/// <param name="info">Информация.</param>
-		virtual void LogInforamtion(const std::string& info) = 0;
+		/// <param name="callerName">Имя вызывающего компонента (объекта).</param>
+		virtual void LogInforamtion(const std::string& info, const std::string& callerName) = 0;
 
 		/// <summary>
 		/// Логирование ошибки.
 		/// </summary>
 		/// <param name="error">Ошибка.</param>
-		virtual void LogError(const std::string& error) = 0;
+		/// <param name="callerName">Имя вызывающего компонента (объекта).</param>
+		virtual void LogError(const std::string& error, const std::string& callerName) = 0;
 	};
 }

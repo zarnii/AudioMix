@@ -3,6 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include <format>
+#include <iomanip>
 
 namespace AudioMix
 {
@@ -23,12 +24,14 @@ namespace AudioMix
 		/// Логирование информации.
 		/// </summary>
 		/// <param name="info">Информация.</param>
-		void LogInforamtion(const std::string& info) override;
+		/// <param name="callerName">Имя вызывающего компонента (объекта).</param>
+		void LogInforamtion(const std::string& info, const std::string& callerName) override;
 
 		/// <summary>
 		/// Логирование ошибки.
 		/// </summary>
 		/// <param name="error">Ошибка.</param>
-		void LogError(const std::string& error) override;
+		/// <param name="callerName">Имя вызывающего компонента (объекта).</param>
+		void LogError(const std::string& error, const std::string& callerName) override;
 	};
 }
