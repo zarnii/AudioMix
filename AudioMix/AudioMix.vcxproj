@@ -138,7 +138,9 @@
     <ClCompile Include="src\SliderMapper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\AudioEndpointException.h" />
     <ClInclude Include="src\AudioMix.h" />
+    <ClInclude Include="src\AudioServiceNotRunning.h" />
     <ClInclude Include="src\AudioSession.h" />
     <ClInclude Include="src\ConsoleLogger.h" />
     <ClInclude Include="src\Exceptions.h" />

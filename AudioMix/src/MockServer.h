@@ -2,6 +2,7 @@
 #include <memory>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 #include "IServer.h"
 #include "ILogger.h"
 #include "ServerConfig.h"

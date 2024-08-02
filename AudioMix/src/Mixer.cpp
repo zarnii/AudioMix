@@ -10,6 +10,16 @@ namespace AudioMix
 
 	Mixer::Mixer(std::shared_ptr<ILogger> logger, std::unique_ptr<SliderMapper>&& mapper)
 	{
+		if (logger == nullptr)
+		{
+			throw std::invalid_argument("Logger is null.");
+		}
+
+		if (mapper == nullptr)
+		{
+			throw std::invalid_argument("Mapper is null.");
+		}
+
 		_logger = logger;
 		_sliderMapper = std::move(mapper);
 	}

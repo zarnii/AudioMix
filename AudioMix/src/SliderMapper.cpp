@@ -4,6 +4,11 @@ namespace AudioMix
 {
 	SliderMapper::SliderMapper(std::shared_ptr<ILogger> logger)
 	{
+		if (logger == nullptr)
+		{
+			throw std::invalid_argument("Logger is null.");
+		}
+
 		_logger = logger;
 		InitMap();
 		_logger->LogInforamtion(

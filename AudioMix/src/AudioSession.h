@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <audiopolicy.h>
 #include <atlbase.h>
+#include "Exceptions.h"
 
 namespace AudioMix
 {

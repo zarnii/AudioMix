@@ -6,6 +6,16 @@ namespace AudioMix
 		std::shared_ptr<Normalizer> normalizer,
 		ServerConfig& serverConfig)
 	{
+		if (logger == nullptr)
+		{
+			throw std::invalid_argument("Logger is null.");
+		}
+
+		if (normalizer == nullptr)
+		{
+			throw std::invalid_argument("Normalizer is null.");
+		}
+
 		_logger = logger;
 		_normalizer = normalizer;
 		_config = serverConfig;
@@ -42,6 +52,11 @@ namespace AudioMix
 
 	void MockServer::AddObserver(std::shared_ptr<IServerObserver> observer)
 	{
+		if (observer == nullptr)
+		{
+			throw std::invalid_argument("Observer is null.");
+		}
+
 		_observers.push_back(observer);
 	}
 }
