@@ -1,4 +1,4 @@
-#include "AudioSession.h"
+п»ї#include "AudioSession.h"
 
 namespace AudioMix
 {
@@ -31,7 +31,7 @@ namespace AudioMix
 			return volume;
 		}
 
-		// to-do: Кидать ошибку.
+		// to-do: РљРёРґР°С‚СЊ РѕС€РёР±РєСѓ.
 		return -1;
 	}
 

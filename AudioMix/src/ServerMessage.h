@@ -1,20 +1,20 @@
-#pragma once
+п»ї#pragma once
 #include <cstdint>
 
 namespace AudioMix
 {
 	/// <summary>
-	/// Сообщение сервера.
+	/// РЎРѕРѕР±С‰РµРЅРёРµ СЃРµСЂРІРµСЂР°.
 	/// </summary>
 	struct ServerMessage
 	{
 		/// <summary>
-		/// Номер слайдера.
+		/// РќРѕРјРµСЂ СЃР»Р°Р№РґРµСЂР°.
 		/// </summary>
 		uint8_t sliderNumber;
 
 		/// <summary>
-		/// Значение.
+		/// Р—РЅР°С‡РµРЅРёРµ.
 		/// </summary>
 		float value;
 	};

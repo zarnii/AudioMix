@@ -1,4 +1,4 @@
-#include "SliderMapper.h"
+﻿#include "SliderMapper.h"
 
 namespace AudioMix
 {

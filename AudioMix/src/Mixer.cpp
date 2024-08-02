@@ -1,4 +1,4 @@
-#include "Mixer.h"
+﻿#include "Mixer.h"
 
 namespace AudioMix
 {

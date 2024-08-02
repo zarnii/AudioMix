@@ -1,4 +1,4 @@
-#include "Normalizer.h"
+﻿#include "Normalizer.h"
 
 namespace AudioMix
 {

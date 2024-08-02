@@ -1,4 +1,4 @@
-#include "ConsoleLogger.h"
+﻿#include "ConsoleLogger.h"
 
 namespace AudioMix
 {

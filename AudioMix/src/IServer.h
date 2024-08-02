@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <memory>
 #include "ServerMessage.h"
 #include "IServerObserver.h"
@@ -9,19 +9,19 @@ namespace AudioMix
 	{
 	public:
 		/// <summary>
-		/// Включение прослушивания входящих сообщений.
+		/// Р’РєР»СЋС‡РµРЅРёРµ РїСЂРѕСЃР»СѓС€РёРІР°РЅРёСЏ РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№.
 		/// </summary>
 		void virtual StartListen() = 0;
 
 		/// <summary>
-		/// Остановки прослушивания входящих сообщений.
+		/// РћСЃС‚Р°РЅРѕРІРєРё РїСЂРѕСЃР»СѓС€РёРІР°РЅРёСЏ РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№.
 		/// </summary>
 		void virtual StopListen() = 0;
 
 		/// <summary>
-		/// Добавление наблюдателя.
+		/// Р”РѕР±Р°РІР»РµРЅРёРµ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ.
 		/// </summary>
-		/// <param name="observer">Наблюдатель.</param>
+		/// <param name="observer">РќР°Р±Р»СЋРґР°С‚РµР»СЊ.</param>
 		void virtual AddObserver(std::shared_ptr<IServerObserver> observer) = 0;
 	};
 }

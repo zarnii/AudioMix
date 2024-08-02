@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <windows.h>
 #include <audiopolicy.h>
@@ -7,7 +7,7 @@
 namespace AudioMix
 {
 	/// <summary>
-	/// Аудио сессия.
+	/// РђСѓРґРёРѕ СЃРµСЃСЃРёСЏ.
 	/// </summary>
 	class AudioSession
 	{
@@ -17,35 +17,35 @@ namespace AudioMix
 		CComPtr<ISimpleAudioVolume> _volume;
 	public:
 		/// <summary>
-		/// Конструктор.
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
 		/// </summary>
-		/// <param name="name">Имя.</param>
+		/// <param name="name">РРјСЏ.</param>
 		/// <param name="id">Id.</param>
-		/// <param name="volume">Мастер управления звука.</param>
+		/// <param name="volume">РњР°СЃС‚РµСЂ СѓРїСЂР°РІР»РµРЅРёСЏ Р·РІСѓРєР°.</param>
 		AudioSession(std::wstring name, DWORD id, CComPtr<ISimpleAudioVolume> volume);
 
 		/// <summary>
-		/// Получение имени.
+		/// РџРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё.
 		/// </summary>
-		/// <returns>Ссылка на строку.</returns>
+		/// <returns>РЎСЃС‹Р»РєР° РЅР° СЃС‚СЂРѕРєСѓ.</returns>
 		const std::wstring& GetName();
 
 		/// <summary>
-		/// Получение Id.
+		/// РџРѕР»СѓС‡РµРЅРёРµ Id.
 		/// </summary>
 		/// <returns>Id.</returns>
 		DWORD GetId();
 
 		/// <summary>
-		/// Получение сколярного уровня громкости.
+		/// РџРѕР»СѓС‡РµРЅРёРµ СЃРєРѕР»СЏСЂРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ РіСЂРѕРјРєРѕСЃС‚Рё.
 		/// </summary>
-		/// <returns>Сколярный уровень громкости.</returns>
+		/// <returns>РЎРєРѕР»СЏСЂРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ РіСЂРѕРјРєРѕСЃС‚Рё.</returns>
 		float GetVolume();
 
 		/// <summary>
-		/// Установки сколярного уровня громкости.
+		/// РЈСЃС‚Р°РЅРѕРІРєРё СЃРєРѕР»СЏСЂРЅРѕРіРѕ СѓСЂРѕРІРЅСЏ РіСЂРѕРјРєРѕСЃС‚Рё.
 		/// </summary>
-		/// <param name="volume">Сколярный уровень громкости.</param>
+		/// <param name="volume">РЎРєРѕР»СЏСЂРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ РіСЂРѕРјРєРѕСЃС‚Рё.</param>
 		void SetVolume(float volume);
 	};
 }

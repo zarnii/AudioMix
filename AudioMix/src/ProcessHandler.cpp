@@ -1,4 +1,4 @@
-#include "ProcessHandler.h"
+﻿#include "ProcessHandler.h"
 
 namespace AudioMix
 {
