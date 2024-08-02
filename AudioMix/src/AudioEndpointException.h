@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdexcept>
 
 namespace AudioMix
@@ -6,7 +6,7 @@ namespace AudioMix
 	namespace Exceptions
 	{
 		/// <summary>
-		/// Ошибка конечной аудио точки.
+		/// РћС€РёР±РєР° РєРѕРЅРµС‡РЅРѕР№ Р°СѓРґРёРѕ С‚РѕС‡РєРё.
 		/// </summary>
 		class AudioEndpointException : public std::exception
 		{

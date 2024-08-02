@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdexcept>
 
 namespace AudioMix
@@ -6,7 +6,7 @@ namespace AudioMix
 	namespace Exceptions
 	{
 		/// <summary>
-		/// Ошибка незапущенной аудио службы Windows.
+		/// РћС€РёР±РєР° РЅРµР·Р°РїСѓС‰РµРЅРЅРѕР№ Р°СѓРґРёРѕ СЃР»СѓР¶Р±С‹ Windows.
 		/// </summary>
 		class AudioServiceNotRunning : public std::exception
 		{
