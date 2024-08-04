@@ -1,5 +1,6 @@
-#pragma once
+﻿#pragma once
 #include <memory>
+#include <stdexcept>
 #include "ILogger.h"
 #include "SliderMapper.h"
 #include "ServerMessage.h"

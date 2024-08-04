@@ -1,7 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include <memory>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 #include "IServer.h"
 #include "ILogger.h"
 #include "ServerConfig.h"
@@ -20,29 +21,29 @@ namespace AudioMix
 		
 	public:
 		/// <summary>
-		/// Конструктор.
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
 		/// </summary>
-		/// <param name="logger">Логгер.</param>
-		/// <param name="normalizer">Нормалайзер.</param>
-		/// <param name="serverConfig">Конфиг сервера.</param>
+		/// <param name="logger">Р›РѕРіРіРµСЂ.</param>
+		/// <param name="normalizer">РќРѕСЂРјР°Р»Р°Р№Р·РµСЂ.</param>
+		/// <param name="serverConfig">РљРѕРЅС„РёРі СЃРµСЂРІРµСЂР°.</param>
 		MockServer(std::shared_ptr<ILogger> logger, 
 			std::shared_ptr<Normalizer> normalizer, 
 			ServerConfig& serverConfig);
 
 		/// <summary>
-		/// Запуск прослушивания входящих сообщений.
+		/// Р—Р°РїСѓСЃРє РїСЂРѕСЃР»СѓС€РёРІР°РЅРёСЏ РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№.
 		/// </summary>
 		void StartListen() override;
 
 		/// <summary>
-		/// Остановка прослушивания входящих сообщений.
+		/// РћСЃС‚Р°РЅРѕРІРєР° РїСЂРѕСЃР»СѓС€РёРІР°РЅРёСЏ РІС…РѕРґСЏС‰РёС… СЃРѕРѕР±С‰РµРЅРёР№.
 		/// </summary>
 		void StopListen() override;
 
 		/// <summary>
-		/// Добавление наблюдателя.
+		/// Р”РѕР±Р°РІР»РµРЅРёРµ РЅР°Р±Р»СЋРґР°С‚РµР»СЏ.
 		/// </summary>
-		/// <param name="observer">Наблюдатель.</param>
+		/// <param name="observer">РќР°Р±Р»СЋРґР°С‚РµР»СЊ.</param>
 		void virtual AddObserver(std::shared_ptr<IServerObserver> observer) override;
 	};
 }

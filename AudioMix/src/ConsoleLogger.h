@@ -1,34 +1,37 @@
-#pragma once
+п»ї#pragma once
 #include "ILogger.h"
 #include <iostream>
 #include <chrono>
 #include <format>
+#include <iomanip>
 
 namespace AudioMix
 {
 	/// <summary>
-	/// Консольный логгер.
+	/// РљРѕРЅСЃРѕР»СЊРЅС‹Р№ Р»РѕРіРіРµСЂ.
 	/// </summary>
 	class ConsoleLogger : public ILogger
 	{
 	private:
 		/// <summary>
-		/// Получение текущего времени в виде строки.
+		/// РџРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё РІ РІРёРґРµ СЃС‚СЂРѕРєРё.
 		/// </summary>
-		/// <returns>Строка формата Y-m-d H:M:S.</returns>
+		/// <returns>РЎС‚СЂРѕРєР° С„РѕСЂРјР°С‚Р° Y-m-d H:M:S.</returns>
 		std::string GetCurentTimeFormatString();
 
 	public:
 		/// <summary>
-		/// Логирование информации.
+		/// Р›РѕРіРёСЂРѕРІР°РЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё.
 		/// </summary>
-		/// <param name="info">Информация.</param>
-		void LogInforamtion(const std::string& info) override;
+		/// <param name="info">РРЅС„РѕСЂРјР°С†РёСЏ.</param>
+		/// <param name="callerName">РРјСЏ РІС‹Р·С‹РІР°СЋС‰РµРіРѕ РєРѕРјРїРѕРЅРµРЅС‚Р° (РѕР±СЉРµРєС‚Р°).</param>
+		void LogInforamtion(const std::string& info, const std::string& callerName) override;
 
 		/// <summary>
-		/// Логирование ошибки.
+		/// Р›РѕРіРёСЂРѕРІР°РЅРёРµ РѕС€РёР±РєРё.
 		/// </summary>
-		/// <param name="error">Ошибка.</param>
-		void LogError(const std::string& error) override;
+		/// <param name="error">РћС€РёР±РєР°.</param>
+		/// <param name="callerName">РРјСЏ РІС‹Р·С‹РІР°СЋС‰РµРіРѕ РєРѕРјРїРѕРЅРµРЅС‚Р° (РѕР±СЉРµРєС‚Р°).</param>
+		void LogError(const std::string& error, const std::string& callerName) override;
 	};
 }

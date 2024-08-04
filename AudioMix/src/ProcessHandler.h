@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <windows.h>
 #include "Exceptions.h"
@@ -9,25 +9,25 @@ namespace AudioMix
 	{
 	private:
 		/// <summary>
-		/// Pid системы.
+		/// Pid СЃРёСЃС‚РµРјС‹.
 		/// </summary>
 		static const uint8_t SystemPid = 0;
 
 		/// <summary>
-		/// Получение правой подстроки имени процесса до знака "\".
+		/// РџРѕР»СѓС‡РµРЅРёРµ РїСЂР°РІРѕР№ РїРѕРґСЃС‚СЂРѕРєРё РёРјРµРЅРё РїСЂРѕС†РµСЃСЃР° РґРѕ Р·РЅР°РєР° "\".
 		/// </summary>
-		/// <param name="processName">Полное имя процесса.</param>
-		/// <returns>Правая подстрока.</returns>
+		/// <param name="processName">РџРѕР»РЅРѕРµ РёРјСЏ РїСЂРѕС†РµСЃСЃР°.</param>
+		/// <returns>РџСЂР°РІР°СЏ РїРѕРґСЃС‚СЂРѕРєР°.</returns>
 		static std::wstring GetRightSubstring(std::wstring& processName);
 	public:
 		/// <summary>
-		/// Получение имени процесса вида "Process.exe"
+		/// РџРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё РїСЂРѕС†РµСЃСЃР° РІРёРґР° "Process.exe"
 		/// Exceptions:
-		/// AudioMix::Exceptions::OpenProcessException - ошибка открытия хэндлера процесса.
-		/// AudioMix::Exceptions::GetProcessNameException - ошибка получения имени процесса.
+		/// AudioMix::Exceptions::OpenProcessException - РѕС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С…СЌРЅРґР»РµСЂР° РїСЂРѕС†РµСЃСЃР°.
+		/// AudioMix::Exceptions::GetProcessNameException - РѕС€РёР±РєР° РїРѕР»СѓС‡РµРЅРёСЏ РёРјРµРЅРё РїСЂРѕС†РµСЃСЃР°.
 		/// </summary>
-		/// <param name="pid">Id процесса.</param>
-		/// <returns>Имя процесса.</returns>
+		/// <param name="pid">Id РїСЂРѕС†РµСЃСЃР°.</param>
+		/// <returns>РРјСЏ РїСЂРѕС†РµСЃСЃР°.</returns>
 		static std::wstring GetProcessNameByPid(DWORD pid);
 	};
 }
