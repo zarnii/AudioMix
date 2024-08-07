@@ -19,13 +19,36 @@ namespace AudioMix
 	class SliderMapper
 	{
 	private:
-		std::unordered_map<uint8_t, std::unique_ptr<AudioSession>> _map;
+		MapperConfig _config;
+		std::unordered_map<size_t, std::shared_ptr<AudioSession>> _map;
 		std::shared_ptr<ILogger> _logger;
-		void InitMap();
-		void CheckHResult(HRESULT hResult, const std::string& errorMessage);
 	public:
-		SliderMapper(std::shared_ptr<ILogger> logger);
-		void SetVolume(uint8_t sliderNumber, float volume);
-		float GetVolume(uint8_t sliderNumber);
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
+		/// <param name="logger">Логгер.</param>
+		/// <param name="config">Конфиг.</param>
+		SliderMapper(std::shared_ptr<ILogger> logger, MapperConfig config);
+		
+		/// <summary>
+		/// Установка звука.
+		/// </summary>
+		/// <param name="sliderNumber">Номер ползунка.</param>
+		/// <param name="volume">Уровень звука от 0 до 1.</param>
+		void SetVolume(size_t sliderNumber, float volume);
+
+		/// <summary>
+		/// Получение звука.
+		/// </summary>
+		/// <param name="sliderNumber">Номер позвунка.</param>
+		/// <returns>Уровень звука от 0 до 1.</returns>
+		float GetVolume(size_t sliderNumber);
+
+		/// <summary>
+		/// Биндинг аудиосессии к номеру ползунка.
+		/// </summary>
+		/// <param name="sliderNumber">Номер ползунка начиная с 0.</param>
+		/// <param name="audioSession">Аудиосессия.</param>
+		void BindSlider(size_t sliderNumber, std::shared_ptr<AudioSession> audioSession);
 	};
 }
