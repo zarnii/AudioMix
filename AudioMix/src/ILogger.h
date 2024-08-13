@@ -23,5 +23,7 @@ namespace AudioMix
 		/// <param name="error">Ошибка.</param>
 		/// <param name="callerName">Имя вызывающего компонента (объекта).</param>
 		virtual void LogError(const std::string& error, const std::string& callerName) = 0;
+	protected:
+		virtual ~ILogger() = default;
 	};
 }

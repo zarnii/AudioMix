@@ -29,6 +29,8 @@ namespace AudioMix
 		/// <param name="logger">Логгер.</param>
 		/// <param name="config">Конфиг.</param>
 		SliderMapper(std::shared_ptr<ILogger> logger, MapperConfig config);
+
+		~SliderMapper();
 		
 		/// <summary>
 		/// Установка звука.

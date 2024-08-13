@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AudioSession.cpp" />
+    <ClCompile Include="src\AudioSessionFactory.cpp" />
     <ClCompile Include="src\ConsoleLogger.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Mixer.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="src\AudioMix.h" />
     <ClInclude Include="src\AudioServiceNotRunning.h" />
     <ClInclude Include="src\AudioSession.h" />
+    <ClInclude Include="src\AudioSessionFactory.h" />
     <ClInclude Include="src\ConsoleLogger.h" />
     <ClInclude Include="src\Exceptions.h" />
     <ClInclude Include="src\GetProcessNameException.h" />
