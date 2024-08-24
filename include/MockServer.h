@@ -18,7 +18,7 @@ namespace AudioMix
 		ServerConfig _config;
 		bool _listening;
 		std::vector<std::shared_ptr<IServerObserver>> _observers;
-		
+
 	public:
 		/// <summary>
 		/// Конструктор.
@@ -44,6 +44,12 @@ namespace AudioMix
 		/// Добавление наблюдателя.
 		/// </summary>
 		/// <param name="observer">Наблюдатель.</param>
-		void virtual AddObserver(std::shared_ptr<IServerObserver> observer) override;
+		void AddObserver(std::shared_ptr<IServerObserver> observer) override;
+
+		/// <summary>
+		/// Удаление наблюдателя.
+		/// </summary>
+		/// <param name="observer">Наблюдатель.</param>
+		void DeleteObserver(std::shared_ptr<IServerObserver> observer) override;
 	};
 }

@@ -59,4 +59,10 @@ namespace AudioMix
 
 		_observers.push_back(observer);
 	}
+
+	void MockServer::DeleteObserver(std::shared_ptr<IServerObserver> observer)
+	{
+		auto new_end = std::remove(_observers.begin(), _observers.end(), observer);
+		_observers.erase(new_end, _observers.end());
+	}
 }

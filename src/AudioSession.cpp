@@ -31,16 +31,17 @@ namespace AudioMix
 		float volume;
 		auto hResult = _volume->GetMasterVolume(&volume);
 
-		if (hResult == S_OK)
-		{
-			return volume;
-		}
-		else if (hResult == AUDCLNT_E_DEVICE_INVALIDATED)
+		if (hResult == AUDCLNT_E_DEVICE_INVALIDATED)
 		{
 			throw Exceptions::AudioEndpointException("Audio endpoint was disable or was reset.");
 		}
 
-		throw Exceptions::AudioServiceNotRunning("Audio service not running.");
+		if (hResult == AUDCLNT_E_SERVICE_NOT_RUNNING)
+		{
+			throw Exceptions::AudioServiceNotRunning("Audio service not running.");
+		}
+
+		return volume;
 	}
 
 	void AudioSession::SetVolume(float volume)

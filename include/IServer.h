@@ -23,5 +23,13 @@ namespace AudioMix
 		/// </summary>
 		/// <param name="observer">Наблюдатель.</param>
 		void virtual AddObserver(std::shared_ptr<IServerObserver> observer) = 0;
+
+		/// <summary>
+		/// Удаление наблюдателя.
+		/// </summary>
+		/// <param name="observer">Наблюдатель.</param>
+		void virtual DeleteObserver(std::shared_ptr<IServerObserver> observer) = 0;
+	protected:
+		virtual ~IServer() = default;
 	};
 }

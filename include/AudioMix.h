@@ -9,6 +9,7 @@
 #include "ConsoleLogger.h"
 
 #include "AudioSession.h"
+#include "AudioSessionFactory.h"
 
 #include "SliderMapper.h"
 
