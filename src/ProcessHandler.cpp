@@ -21,7 +21,7 @@ namespace AudioMix
 
 		DWORD bufferSize = 1024;
 		wchar_t buffer[1024];
-		auto result = QueryFullProcessImageName(hProcess, PROCESS_NAME_NATIVE, buffer, &bufferSize);
+		auto result = QueryFullProcessImageNameW(hProcess, PROCESS_NAME_NATIVE, buffer, &bufferSize);
 		CloseHandle(hProcess);
 
 		
