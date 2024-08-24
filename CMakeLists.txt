@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDART 20)
 set(SRC 
 	src/main.cpp 
 	src/AudioSession.cpp
+	src/AudioSessionFactory.cpp
 	src/ConsoleLogger.cpp
 	src/Mixer.cpp
 	src/MockServer.cpp
