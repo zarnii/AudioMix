@@ -3,6 +3,7 @@
 #include <vector>
 #include <mmdeviceapi.h>
 #include <stdexcept>
+#include <format>
 #include "AudioSession.h"
 #include "ILogger.h"
 #include "ProcessHandler.h"

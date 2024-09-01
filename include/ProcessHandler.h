@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include <windows.h>
+#include <format>
 #include "Exceptions.h"
 
 namespace AudioMix

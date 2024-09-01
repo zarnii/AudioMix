@@ -22,11 +22,14 @@ namespace AudioMix
 		_listening = true;
 		_observers = std::vector<std::shared_ptr<IServerObserver>>();
 
-		// _logger->LogInforamtion("The server was created successfully.");
+		_logger->LogInforamtion("The server was created successfully.", 
+			NAMEOF(AudioMix::MockServer));
 	}
 
 	void MockServer::StartListen()
 	{
+		_logger->LogInforamtion("Server was started", NAMEOF(MockServer::StartListen));
+
 		while (_listening)
 		{
 			std::string message; 

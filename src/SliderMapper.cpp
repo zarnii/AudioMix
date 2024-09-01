@@ -13,12 +13,12 @@ namespace AudioMix
 		_logger = logger;
 		_map = std::unordered_map<size_t, std::shared_ptr<AudioSession>>();
 
-		_logger->LogInforamtion("SliderMapper create", NAMEOF(AudioMix::SliderMapper));
+		_logger->LogInforamtion("SliderMapper was create.", NAMEOF(AudioMix::SliderMapper));
 	}
 
 	SliderMapper::~SliderMapper()
 	{
-		_logger->LogInforamtion("SliderMapper delete", NAMEOF(AudioMix::SliderMapper));
+		_logger->LogInforamtion("SliderMapper was deleted", NAMEOF(AudioMix::SliderMapper));
 	}
 
 	void SliderMapper::SetVolume(size_t sliderNumber, float volume)

@@ -15,7 +15,8 @@ namespace AudioMix
 		
 		if (!hProcess)
 		{
-			throw Exceptions::OpenProcessException("Open process error.");
+			throw Exceptions::OpenProcessException(
+				std::format("Open process error (pid: {}).", pid).c_str());
 		}
 		
 
@@ -32,7 +33,8 @@ namespace AudioMix
 		
 		if (!result)
 		{
-			throw Exceptions::GetProcessNameException("Get process name error.");
+			throw Exceptions::GetProcessNameException(
+				std::format("Get process name error (pid: {}).", pid).c_str());
 		}
 		
 		auto processName = std::wstring(buffer);
