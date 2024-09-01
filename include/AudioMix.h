@@ -17,4 +17,6 @@
 
 #include "Normalizer.h"
 
+#include "PortSerializer.h"
+
 #include "Exceptions.h"

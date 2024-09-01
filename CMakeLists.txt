@@ -11,5 +11,6 @@ set(SRC
 	src/MockServer.cpp
 	src/Normalizer.cpp
 	src/ProcessHandler.cpp
-	src/SliderMapper.cpp)
+	src/SliderMapper.cpp
+	src/PortSerializer.cpp)
 add_executable(AudioMix ${SRC})
