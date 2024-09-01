@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdexcept>
 
 namespace AudioMix
@@ -6,7 +6,7 @@ namespace AudioMix
 	namespace Exceptions
 	{
 		/// <summary>
-		/// Ошибка создания файла.
+		/// РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ С„Р°Р№Р»Р°.
 		/// </summary>
 		class CreateFileException: public std::exception
 		{

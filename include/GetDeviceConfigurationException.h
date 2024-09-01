@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdexcept>
 
 namespace AudioMix
@@ -6,7 +6,7 @@ namespace AudioMix
 	namespace Exceptions
 	{
 		/// <summary>
-		/// Ошибка получение конфигурации устройства.
+		/// РћС€РёР±РєР° РїРѕР»СѓС‡РµРЅРёРµ РєРѕРЅС„РёРіСѓСЂР°С†РёРё СѓСЃС‚СЂРѕР№СЃС‚РІР°.
 		/// </summary>
 		class GetDeviceConfigurationException : public std::exception
 		{
