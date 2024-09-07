@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <windows.h>
 #include <string>
 #include <stdint.h>
@@ -11,7 +11,7 @@
 namespace AudioMix
 {
 	/// <summary>
-	/// Сериалайзер последовательного порта для Windows.
+	/// РЎРµСЂРёР°Р»Р°Р№Р·РµСЂ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРіРѕ РїРѕСЂС‚Р° РґР»СЏ Windows.
 	/// </summary>
 	class PortSerializerWin32: public IPlatformPortSerializer
 	{
@@ -27,33 +27,33 @@ namespace AudioMix
 
 	public:
 		/// <summary>
-		/// Конструктор.
+		/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
 		/// </summary>
-		/// <param name="portName">Имя порта.</param>
-		/// <param name="logger">Логгер.</param>
+		/// <param name="portName">РРјСЏ РїРѕСЂС‚Р°.</param>
+		/// <param name="logger">Р›РѕРіРіРµСЂ.</param>
 		PortSerializerWin32(std::string portName, std::shared_ptr<ILogger> logger);
 
 		/// <summary>
-		/// Деструктор.
+		/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ.
 		/// </summary>
 		~PortSerializerWin32();
 
 		/// <summary>
-		/// Чтение данных из порта.
+		/// Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… РёР· РїРѕСЂС‚Р°.
 		/// </summary>
-		/// <returns>Прочитанные данные в виде строки.</returns>
+		/// <returns>РџСЂРѕС‡РёС‚Р°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ РІ РІРёРґРµ СЃС‚СЂРѕРєРё.</returns>
 		std::string ReadData() override;
 
 		/// <summary>
-		/// Получение флага, показывающего подключен ли порт.
+		/// РџРѕР»СѓС‡РµРЅРёРµ С„Р»Р°РіР°, РїРѕРєР°Р·С‹РІР°СЋС‰РµРіРѕ РїРѕРґРєР»СЋС‡РµРЅ Р»Рё РїРѕСЂС‚.
 		/// </summary>
-		/// <returns>True, если подключен.</returns>
+		/// <returns>True, РµСЃР»Рё РїРѕРґРєР»СЋС‡РµРЅ.</returns>
 		bool GetIsConnected() override;
 
 		/// <summary>
-		/// Получение имени порта.
+		/// РџРѕР»СѓС‡РµРЅРёРµ РёРјРµРЅРё РїРѕСЂС‚Р°.
 		/// </summary>
-		/// <returns>Имя порта.</returns>
+		/// <returns>РРјСЏ РїРѕСЂС‚Р°.</returns>
 		std::string GetPortName() override;
 	};
 }
