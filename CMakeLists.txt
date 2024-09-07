@@ -12,5 +12,7 @@ set(SRC
 	src/Normalizer.cpp
 	src/ProcessHandler.cpp
 	src/SliderMapper.cpp
+	src/PortSerializerWin32.cpp
+	src/PortSerializerLinux.cpp
 	src/PortSerializer.cpp)
 add_executable(AudioMix ${SRC})

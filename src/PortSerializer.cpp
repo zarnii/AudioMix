@@ -1,63 +1,33 @@
 #include "PortSerializer.h"
+#if defined (_WIN32)
+#include "PortSerializerWin32.h"
+#elif defined (__linux__)
+#include "PortSerializerLinux.h"
+#endif
+
 
 namespace AudioMix
 {
 	PortSerializer::PortSerializer(std::string portName, std::shared_ptr<ILogger> logger)
-	{
-		_isConnected = false;
-		_portName = portName;
-		CreatePortFile();
+#if defined(_WIN32)
+		: _ppSerializer(std::make_unique<PortSerializerWin32>(portName, logger))
+#elif defined(__linux__)
+		: _ppSerializer(std::make_unique<PortSerializerLinux>(portName, logger))
+#endif
+	{}
 
-		_logger = logger;
+	std::string PortSerializer::ReadData()
+	{
+		return _ppSerializer->ReadData();
 	}
 
-	PortSerializer::~PortSerializer()
+	bool PortSerializer::GetIsConnected()
 	{
-		_isConnected = false;
-		CloseHandle(_portDescriptor);
+		return _ppSerializer->GetIsConnected();
 	}
 
-	std::vector<uint8_t> PortSerializer::ReadData()
+	std::string PortSerializer::GetPortName()
 	{
-		
-		return std::vector<uint8_t>();
-	}
-
-	void PortSerializer::CreatePortFile()
-	{
-		auto _portDescriptor = CreateFileA(_portName.c_str(),
-			GENERIC_READ,
-			0,
-			NULL,
-			OPEN_EXISTING,
-			FILE_ATTRIBUTE_NORMAL,
-			NULL);
-
-		if (_portDescriptor == INVALID_HANDLE_VALUE)
-		{
-			throw Exceptions::CreateFileException("Create port file error (INVALID_HANDLE_VALUE)");
-		}
-	}
-
-	void PortSerializer::SetPortParameters()
-	{
-		DCB dcb;
-		
-		if (!GetCommState(_portDescriptor, &dcb))
-		{
-			throw Exceptions::GetDeviceConfigurationException("Failed to get serial port configuration");
-		}
-
-		dcb.BaudRate = CBR_9600;
-		dcb.ByteSize = DefaultByteSize;
-		dcb.Parity = NOPARITY;
-		dcb.StopBits = ONE5STOPBITS;
-
-		if (!SetCommState(_portDescriptor, &dcb))
-		{
-			throw Exceptions::SetDeviceConfigurationException("Failed to set serial port configuration");
-		}
-
-		_isConnected = true;
+		return _ppSerializer->GetPortName();
 	}
 }
