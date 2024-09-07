@@ -14,5 +14,6 @@ set(SRC
 	src/SliderMapper.cpp
 	src/PortSerializerWin32.cpp
 	src/PortSerializerLinux.cpp
-	src/PortSerializer.cpp)
+	src/PortSerializer.cpp
+	src/ComPortServer.cpp)
 add_executable(AudioMix ${SRC})

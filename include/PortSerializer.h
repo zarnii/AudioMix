@@ -21,6 +21,14 @@ namespace AudioMix
 		PortSerializer(std::string portName, std::shared_ptr<ILogger> logger);
 		
 		/// <summary>
+		/// Конструктор перемещения.
+		/// </summary>
+		/// <param name="right"></param>
+		PortSerializer(PortSerializer&& right) noexcept;
+
+		PortSerializer(const PortSerializer& other) = delete;
+
+		/// <summary>
 		/// Чтение данных с порта, останавливающая операция.
 		/// </summary>
 		/// <returns>Считанные данные.</returns>

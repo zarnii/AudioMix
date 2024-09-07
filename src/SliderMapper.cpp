@@ -23,6 +23,11 @@ namespace AudioMix
 
 	void SliderMapper::SetVolume(size_t sliderNumber, float volume)
 	{
+		if (!_map.contains(sliderNumber))
+		{
+			return;
+		}
+
 		_map[sliderNumber]->SetVolume(volume);
 		_logger->LogInforamtion(
 			std::format("Set new volume, {} slider: {} volume", sliderNumber, volume),

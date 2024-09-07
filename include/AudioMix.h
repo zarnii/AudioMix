@@ -2,6 +2,7 @@
 
 #include "IServer.h"
 #include "MockServer.h"
+#include "ComPortServer.h"
 #include "ServerConfig.h"
 #include "IServerObserver.h"
 

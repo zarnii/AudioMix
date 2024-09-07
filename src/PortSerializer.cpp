@@ -16,6 +16,10 @@ namespace AudioMix
 #endif
 	{}
 
+	PortSerializer::PortSerializer(PortSerializer&& right) noexcept
+		:	_ppSerializer(std::move(right._ppSerializer))
+	{}
+
 	std::string PortSerializer::ReadData()
 	{
 		return _ppSerializer->ReadData();
