@@ -2,6 +2,7 @@
 
 #include "IServer.h"
 #include "MockServer.h"
+#include "ComPortServer.h"
 #include "ServerConfig.h"
 #include "IServerObserver.h"
 
@@ -16,5 +17,7 @@
 #include "Mixer.h"
 
 #include "Normalizer.h"
+
+#include "PortSerializer.h"
 
 #include "Exceptions.h"

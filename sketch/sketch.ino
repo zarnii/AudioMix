@@ -2,6 +2,7 @@
 #define SECOND_SLIDER_PIN A1
 #define THRID_SLIDER_PIN A2
 #define CALC_ERR 8
+#define STOP_SYMBOL '$'
 
 // MAX_VALUE 1023
 uint16_t fs_prev_value = 0;
@@ -29,19 +30,22 @@ void loop()
   if (fs_round_value != fs_prev_value)
   {
     fs_prev_value = fs_round_value;
-    Serial.println("0-" + String(fs_value));
+    String str = "0-" + String(fs_value) + STOP_SYMBOL;
+    Serial.write(str.c_str());
   }
   
   if (ss_round_value != ss_prev_value)
   {
     ss_prev_value = ss_round_value;
-    Serial.println("1-" + String(ss_value));
+    String str = "1-" + String(ss_value) + STOP_SYMBOL;
+    Serial.write(str.c_str());
   }
   
   if (ts_round_value != ts_prev_value)
   {
     ts_prev_value = ts_round_value;
-    Serial.println("2-" + String(ts_value));
+    String str = "2-" + String(ts_value) + STOP_SYMBOL;
+    Serial.write(str.c_str());
   }
   
   

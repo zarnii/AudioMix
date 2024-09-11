@@ -11,7 +11,10 @@ namespace AudioMix
 		/// </summary>
 		/// <param name="serverMessage">Сообщение сервера.</param>
 		void virtual MessageReceive(ServerMessage& serverMessage) = 0;
-	protected:
+		
+		/// <summary>
+		/// Деструктор.
+		/// </summary>
 		virtual ~IServerObserver() = default;
 	};
 }

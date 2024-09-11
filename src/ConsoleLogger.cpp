@@ -4,7 +4,6 @@ namespace AudioMix
 {
 	void ConsoleLogger::LogInforamtion(const std::string& info, const std::string& callerName)
 	{
-		
 		std::cout << std::format("[INFO]  [{} | {}]: ", callerName, GetCurentTimeFormatString()) << info << std::endl;
 	}
 
