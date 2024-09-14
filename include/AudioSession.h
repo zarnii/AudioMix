@@ -29,19 +29,19 @@ namespace AudioMix
 		/// Получение имени.
 		/// </summary>
 		/// <returns>Ссылка на строку.</returns>
-		const std::wstring& GetName();
+		std::wstring GetName() const;
 
 		/// <summary>
 		/// Получение Id.
 		/// </summary>
 		/// <returns>Id.</returns>
-		DWORD GetId();
+		DWORD GetId() const;
 
 		/// <summary>
 		/// Получение сколярного уровня громкости.
 		/// </summary>
 		/// <returns>Сколярный уровень громкости.</returns>
-		float GetVolume();
+		float GetVolume() const;
 
 		/// <summary>
 		/// Установки сколярного уровня громкости.

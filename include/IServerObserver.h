@@ -10,7 +10,7 @@ namespace AudioMix
 		/// Получение сообщения.
 		/// </summary>
 		/// <param name="serverMessage">Сообщение сервера.</param>
-		void virtual MessageReceive(ServerMessage& serverMessage) = 0;
+		void virtual MessageReceive(ServerMessage& serverMessage) const = 0;
 		
 		/// <summary>
 		/// Деструктор.

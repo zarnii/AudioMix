@@ -20,17 +20,17 @@ namespace AudioMix
 		:	_ppSerializer(std::move(right._ppSerializer))
 	{}
 
-	std::string PortSerializer::ReadData()
+	std::string PortSerializer::ReadData() const
 	{
 		return _ppSerializer->ReadData();
 	}
 
-	bool PortSerializer::GetIsConnected()
+	bool PortSerializer::GetIsConnected() const
 	{
 		return _ppSerializer->GetIsConnected();
 	}
 
-	std::string PortSerializer::GetPortName()
+	std::string PortSerializer::GetPortName() const
 	{
 		return _ppSerializer->GetPortName();
 	}
