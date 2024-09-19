@@ -26,24 +26,25 @@ namespace AudioMix
 		/// <param name="right"></param>
 		PortSerializer(PortSerializer&& right) noexcept;
 
+
 		PortSerializer(const PortSerializer& other) = delete;
 
 		/// <summary>
 		/// Чтение данных с порта, останавливающая операция.
 		/// </summary>
 		/// <returns>Считанные данные.</returns>
-		std::string ReadData();
+		std::string ReadData() const;
 
 		/// <summary>
 		/// Получение флага, показывающего подключен ли порт.
 		/// </summary>
 		/// <returns>True, если да.</returns>
-		bool GetIsConnected();
+		bool GetIsConnected() const;
 
 		/// <summary>
 		/// Получение имени порта.
 		/// </summary>
 		/// <returns>Имя порта.</returns>
-		std::string GetPortName();
+		std::string GetPortName() const;
 	};
 }

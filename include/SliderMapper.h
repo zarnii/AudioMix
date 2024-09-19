@@ -37,14 +37,14 @@ namespace AudioMix
 		/// </summary>
 		/// <param name="sliderNumber">Номер ползунка.</param>
 		/// <param name="volume">Уровень звука от 0 до 1.</param>
-		void SetVolume(size_t sliderNumber, float volume);
+		void SetVolume(size_t sliderNumber, float volume) const;
 
 		/// <summary>
 		/// Получение звука.
 		/// </summary>
 		/// <param name="sliderNumber">Номер позвунка.</param>
 		/// <returns>Уровень звука от 0 до 1.</returns>
-		float GetVolume(size_t sliderNumber);
+		float GetVolume(size_t sliderNumber) const;
 
 		/// <summary>
 		/// Биндинг аудиосессии к номеру ползунка.

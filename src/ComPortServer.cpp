@@ -4,11 +4,10 @@ namespace AudioMix
 {
 	// Public methods start.
 	ComPortServer::ComPortServer(std::string portName, std::shared_ptr<ILogger> logger, Normalizer&& normalizer)
-		:	_normalizer(normalizer),
-			_portSerializer(portName, logger)
-	{
-		_isListening = false;
-	}
+		: _portSerializer(portName, logger), 
+		_normalizer(normalizer), 
+		_isListening(false)
+	{}
 
 	ComPortServer::~ComPortServer()
 	{}

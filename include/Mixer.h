@@ -15,6 +15,6 @@ namespace AudioMix
 		std::unique_ptr<SliderMapper> _sliderMapper;
 	public:
 		Mixer(std::shared_ptr<ILogger> logger, std::unique_ptr<SliderMapper>&& mapper);
-		void MessageReceive(ServerMessage& serverMessage) override;
+		void MessageReceive(ServerMessage& serverMessage) const override;
 	};
 }

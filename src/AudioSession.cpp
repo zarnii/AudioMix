@@ -3,30 +3,29 @@
 namespace AudioMix
 {
 	AudioSession::AudioSession(std::wstring name, DWORD id, CComPtr<ISimpleAudioVolume> volume)
+		: _name(name), _id (id)
 	{
 		if (volume == nullptr)
 		{
 			throw std::invalid_argument("Volume is null.");
 		}
 
-		_name = name;
-		_id = id;
 		_volume = volume;
 	}
 
 
-	const std::wstring& AudioSession::GetName()
+	std::wstring AudioSession::GetName() const
 	{
 		return _name;
 	}
 
 
-	DWORD AudioSession::GetId()
+	DWORD AudioSession::GetId() const
 	{
 		return _id;
 	}
 
-	float AudioSession::GetVolume()
+	float AudioSession::GetVolume() const
 	{
 		float volume;
 		auto hResult = _volume->GetMasterVolume(&volume);

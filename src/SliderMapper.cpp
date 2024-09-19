@@ -3,6 +3,7 @@
 namespace AudioMix
 {
 	SliderMapper::SliderMapper(std::shared_ptr<ILogger> logger, MapperConfig config)
+		: _config(config)
 	{
 		if (logger == nullptr)
 		{
@@ -11,7 +12,6 @@ namespace AudioMix
 
 		_config = config;
 		_logger = logger;
-		_map = std::unordered_map<size_t, std::shared_ptr<AudioSession>>();
 
 		_logger->LogInforamtion("SliderMapper was create.", NAMEOF(AudioMix::SliderMapper));
 	}
@@ -21,26 +21,26 @@ namespace AudioMix
 		_logger->LogInforamtion("SliderMapper was deleted", NAMEOF(AudioMix::SliderMapper));
 	}
 
-	void SliderMapper::SetVolume(size_t sliderNumber, float volume)
+	void SliderMapper::SetVolume(size_t sliderNumber, float volume) const
 	{
 		if (!_map.contains(sliderNumber))
 		{
 			return;
 		}
 
-		_map[sliderNumber]->SetVolume(volume);
+		_map.at(sliderNumber)->SetVolume(volume);
 		_logger->LogInforamtion(
 			std::format("Set new volume, {} slider: {} volume", sliderNumber, volume),
 			std::string(NAMEOF(SliderMapper::SetVolume)));
 	}
 
-	float SliderMapper::GetVolume(size_t sliderNumber)
+	float SliderMapper::GetVolume(size_t sliderNumber) const
 	{
 		_logger->LogInforamtion(
 			std::format("Get volume from {} slider", sliderNumber),
 			std::string(NAMEOF(SliderMapper::GetVolume)));
 
-		return _map[sliderNumber]->GetVolume();
+		return _map.at(sliderNumber)->GetVolume();
 	}
 
 	void SliderMapper::BindSlider(size_t sliderNumber, std::shared_ptr<AudioSession> audioSession)
